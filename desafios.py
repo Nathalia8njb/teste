@@ -126,11 +126,12 @@ if dados.data:
     st.subheader("Deletar Desafio")
 
     id_delete = st.number_input("ID do desafio para deletar", step=1)
+    confirmar = st.in_checkbox("Tem certeza que deseja deletar esse desafio?")
 
     if st.button("Deletar"):
-        if id_delete:
+        if id_delete and confirmar:
             deletar_desafio(id_delete)
-            st.success("Desafio deletado com sucesso")
+            st.success("Desafio deletado com sucesso!!!")
         else:
             st.warning("Informe um ID válido")
 
