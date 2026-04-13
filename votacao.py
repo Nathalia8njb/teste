@@ -162,16 +162,20 @@ elif st.session_state.pagina == "votacao":
 
             if existente.data:
                 st.warning("Você já votou. Atualizando voto...")
+                time.sleep(1.5)
+                placeholder.empty()
 
                 atualizar_voto(usuario, desafio, voto)
                 st.success("Voto atualizado com sucesso.")
+                 time.sleep(2)
+                placeholder.empty()
 
             else:
                 inserir_voto(usuario, desafio, voto)
-                st.success("Voto registrado com sucesso.")
+                st.success("Voto registrado com sucesso!!!")
 
         except Exception as e:
-            st.error(f"Erro: {e}")
+            st.error(f"Erro ao regsitrar voto {e}")
 
 
     # =========================
